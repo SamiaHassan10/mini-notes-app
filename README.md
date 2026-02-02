@@ -93,3 +93,16 @@ python -m flake8 backend
 ```
 
 If you want, I can also add a short `dev` script or `Makefile` to simplify these commands.
+
+Publishing Docker images from CI
+
+- The CI workflow can publish images to Docker Hub automatically when a push is made to `main`.
+- Set two repository secrets in your project settings: `DOCKER_USERNAME` and `DOCKER_PASSWORD` (or an access token).
+- After setting those secrets, CI will log in and push two images:
+  - `DOCKER_USERNAME/mini-notes-backend` (tags: `SHA`, `latest`)
+  - `DOCKER_USERNAME/mini-notes-frontend` (tags: `SHA`, `latest`)
+
+Notes
+
+- Image push only runs on the `main` branch and only if the required secrets are set.
+- If you prefer GitHub Container Registry (GHCR), I can update the workflow to push there instead and show the required secrets/permissions.
