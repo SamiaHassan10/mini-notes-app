@@ -75,4 +75,21 @@ docker ps -a
 docker container prune
 ```
 
-If you want, I can also add a short `dev` script or makefile to simplify these commands.
+CI / tests ✅
+
+- A GitHub Actions workflow is included at `.github/workflows/ci.yml`. It builds the Compose stack, runs a smoke test and linting, and tears down the services.
+
+Run tests and lint locally:
+
+```bash
+# Install dev dependencies (recommended inside a virtualenv)
+python -m pip install -r backend/requirements-dev.txt
+
+# Run tests
+python -m pytest -q
+
+# Run linter
+python -m flake8 backend
+```
+
+If you want, I can also add a short `dev` script or `Makefile` to simplify these commands.
