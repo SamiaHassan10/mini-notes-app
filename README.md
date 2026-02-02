@@ -105,4 +105,4 @@ Publishing Docker images from CI
 Notes
 
 - Image push only runs on the `main` branch and only if the required secrets are set.
-- If you prefer GitHub Container Registry (GHCR), I can update the workflow to push there instead and show the required secrets/permissions.
+- If you prefer GitHub Container Registry (GHCR), I can update the workflow to push there instead and show the required secrets/permissions...
